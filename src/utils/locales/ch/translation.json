@@ -1,0 +1,23 @@
+{
+    "translations": {
+        "header": {
+            "toggleSidebar": "切换侧边栏",
+            "toggleLanguage": "切换语言",
+            "togglePropertyView": "切换属性试图",
+
+            "home": "首页",
+            "setting": "设置",
+
+            "projectManagement": "项目管理",
+            "alarm": "警报",
+            "history": "历史",
+            
+            "user": "用户",
+            
+            "view": "视图"
+        }
+    },
+    "other": {
+        "imageMissing": "没有图片"
+    }
+}

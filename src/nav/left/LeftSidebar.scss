@@ -1,0 +1,111 @@
+@import '../../App';
+
+.left-sidebar {
+    background-color: $secondary-background-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
+    box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)!important;
+    overflow-y: hidden;
+    width: $left-sidebar-width;
+    transition: width 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden {
+    width: $hidden-left-sidebar-width;
+    transition: width 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden:hover {
+    transition: width 0.3s;
+    width: $left-sidebar-width;
+}
+
+.left-sidebar .main-logo-container {
+    height: $header-height;
+    cursor: pointer;
+    border-bottom: 1px solid $secondary-line-color;
+    text-align: center;
+}
+
+.left-sidebar .main-logo {
+    height: 2em;
+    padding: 0.7em 0;
+    transition: height 0.5s, padding 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden .main-logo {
+    height: 1em;
+    padding: 1.3em 0;
+    transition: height 0.5s, padding 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden:hover .main-logo {
+    height: 2em;
+    padding: 0.7em 0;
+    transition: height 0.3s, padding 0.3s;
+}
+
+
+
+.left-sidebar-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: nowrap;
+    height: calc(100% - #{$header-height});
+    padding: 0 5px;
+}
+
+.left-sidebar-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.left-sidebar-list-item {
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.5em;
+    margin: 0.1em 0;
+    color: $secondary-light-color;
+}
+
+.left-sidebar-list-item:hover {
+    color: $secondary-dark-color;
+    background-color: $secondary-light-background-color;
+}
+
+.left-sidebar-list-item .image-item {
+    width: 1em;
+    height: 1em;
+    margin: 0 1em 0 0.9em;
+}
+
+.left-sidebar .left-sidebar-list-item .left-sidebar-list-item-text {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.left-sidebar.left-sidebar-hidden .left-sidebar-list-item .left-sidebar-list-item-text {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.left-sidebar.left-sidebar-hidden:hover .left-sidebar-list-item .left-sidebar-list-item-text {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.left-sidebar-list-item.active {
+    background-color: $primary-active-background-color;
+    color: $primary-active-color;
+}
+
+.left-sidebar-list-item.secondary-active {
+    background-color: $secondary-active-background-color;
+    color: $secondary-active-color;
+}

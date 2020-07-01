@@ -1,0 +1,88 @@
+@import '../../App';
+
+.header-bar {
+    border-bottom: 1px solid $primary-line-color;
+    height: $header-height;
+    padding: 0 10px;
+    flex-flow: nowrap;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-left: $left-sidebar-width;
+    margin-right: $right-sidebar-width;
+    // width: calc(100% - $left-sidebar-width - 20px);
+    transition: margin-left 0.5s, margin-right 0.5s;
+}
+
+.header-bar.right-sidebar-hidden {
+    // width: calc(100% - $left-sidebar-width - 20px);
+    margin-left: $left-sidebar-width;
+    margin-right: 0;
+    transition: margin-left 0.5s, margin-right 0.5s;
+}
+
+.header-bar.left-sidebar-hidden.right-sidebar-hidden {
+    // width: calc(100% - $hidden-left-sidebar-width - 20px);
+    margin-left: $hidden-left-sidebar-width;
+    transition: margin-left 0.5s, margin-right 0.5s;
+    margin-right: 0;
+}
+
+.header-bar.left-sidebar-hidden {
+    // width: calc(100% - $hidden-left-sidebar-width - $right-sidebar-width - 20px);
+    margin-left: $hidden-left-sidebar-width;
+    transition: margin-left 0.5s, margin-right 0.5s;
+    margin-right: $right-sidebar-width;
+}
+
+.header-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 0;
+}
+
+.header-list-item {
+    cursor: pointer;
+    padding: 0 0.5em;
+    color: $primary-light-color;
+}
+
+.header-list-item:hover {
+    color: $primary-dark-color;
+}
+
+.header-list-item .image-item {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.header-list.right-list {
+    margin-left: auto;
+}
+
+.header-list .dropdown-menu {
+    position: absolute;
+    display: none;
+    list-style: none;
+    /* margin-top: 1.2em; */
+    padding-left: 0;
+    z-index: 1;
+    background-color: $primary-background-color;
+    min-width: 4em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.header-list .header-list-item:hover .dropdown-menu {
+    display: block;
+}
+
+.header-list .dropdown-item {
+    float: none;
+    text-align: left;
+    padding: 0.5em 0.7em;
+}
+
+.header-list .dropdown-item:hover {
+    background-color: $primary-line-color;
+}

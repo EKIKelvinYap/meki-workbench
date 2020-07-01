@@ -1,0 +1,22 @@
+{
+    "translations": {
+        "header": {
+            "toggleSidebar": "Toggle Sidebar",
+            "toggleLanguage": "Toggle Language",
+            "togglePropertyView": "Toggle Property View",
+
+            "home": "Home",
+            "setting": "Settings",
+
+            "projectManagement": "Project Management",
+            "alarm": "Alarms",
+            "history": "Histories",
+            "user": "Users",
+            
+            "view": "View"
+        },
+        "other": {
+            "imageMissing": "Image Missing"
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import '../../App';
+
+.right-sidebar {
+    background-color: $secondary-background-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)!important;
+    overflow-y: hidden;
+    width: $right-sidebar-width;
+    transition: width 0.5s;
+}
+
+.right-sidebar.right-sidebar-hidden {
+    width: 0;
+    transition: width 0.5s;
+}
+
+.right-sidebar .right-sidebar-title-container {
+    height: $header-height;
+    border-bottom: 1px solid $secondary-line-color;
+    text-align: center;
+}
+
+.right-sidebar .right-sidebar-title {
+    font-size: 1em;
+    color: $secondary-light-color;
+}
+
+
+
+.right-sidebar-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: nowrap;
+    height: calc(100% - #{$header-height});
+    padding: 0 5px;
+}
+
+.right-sidebar-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.right-sidebar-list-item {
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.5em;
+    margin: 0.1em 0;
+    color: $secondary-light-color;
+}
+
+.right-sidebar-list-item:hover {
+    color: $secondary-dark-color;
+    background-color: $secondary-light-background-color;
+}
