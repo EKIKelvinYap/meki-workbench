@@ -4,9 +4,9 @@ import HeaderComp from './comps/HeaderComp';
 import { withTranslation } from 'react-i18next';
 
 import './HeaderBar.scss';
-import sidebarToggleIcon from './sidebar-toggle-icon.png';
-import propertyViewToggleIcon from './property-view-toggle-icon.png';
-import alarmIcon from './alarm.jpg';
+// import sidebarToggleIcon from './sidebar-toggle-icon.png';
+// import propertyViewToggleIcon from './property-view-toggle-icon.png';
+// import alarmIcon from './alarm.jpg';
 import HeaderDropdownMenu from './comps/HeaderDropdownMenu';
 import HeaderDropdownItem from './comps/HeaderDropdownItem';
 
@@ -42,7 +42,6 @@ class HeaderBar extends React.Component {
 
     toggleLanguage() {
         const {i18n} = this.props;
-        console.log(i18n);
         if (i18n.language === 'ch') {
             i18n.changeLanguage('en');
         } else {
@@ -56,7 +55,7 @@ class HeaderBar extends React.Component {
         return (
             <header className={headerBarClass}>
                 <ul className="header-list">
-                    <HeaderComp icon={sidebarToggleIcon} text={t('header.toggleSidebar')} onClick={this.toggleLeftSidebar}/>
+                    <HeaderComp i="fa fa-navicon" text={t('header.toggleSidebar')} onClick={this.toggleLeftSidebar}/>
                     <HeaderComp text={t('header.home')}/>
                     <HeaderComp text={t('header.setting')}>
                         <HeaderDropdownMenu>
@@ -67,9 +66,9 @@ class HeaderBar extends React.Component {
                     </HeaderComp>
                 </ul>
                 <ul className="header-list right-list">
-                    <HeaderComp text={t('header.toggleLanguage')} onClick={this.toggleLanguage}/>
-                    <HeaderComp icon={alarmIcon} text={t('header.alarm')}/>
-                    <HeaderComp icon={propertyViewToggleIcon} text={t('header.togglePropertyView')} onClick={this.toggleRightSidebar}/>
+                    <HeaderComp  i="fa fa-language" text={t('header.toggleLanguage')} onClick={this.toggleLanguage}/>
+                    <HeaderComp i="fa fa-bell" text={t('header.alarm')}/>
+                    <HeaderComp i="fa fa-th-large" text={t('header.togglePropertyView')} onClick={this.toggleRightSidebar}/>
                 </ul>
             </header>
         );

@@ -1,0 +1,35 @@
+@import '../../App';
+
+.footer-bar {
+    height: $footer-height;
+    // margin-top: auto;
+    bottom: 0;
+    position: absolute;
+    width: calc(100% - #{$left-sidebar-width} - #{$right-sidebar-width});
+    margin-left: $left-sidebar-width;
+    margin-right: $right-sidebar-width;
+    background-color: $primary-background-color;
+    border-top: 1px solid $primary-line-color;
+    box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)!important;
+    transition: margin-left 0.5s, width 0.5s;
+    z-index: 10;
+}
+
+.footer-bar.right-sidebar-hidden {
+    margin-left: $left-sidebar-width;
+    width: calc(100% - #{$left-sidebar-width});
+    transition: margin-left 0.5s, width 0.5s;
+}
+
+.footer-bar.left-sidebar-hidden.right-sidebar-hidden {
+    margin-left: $hidden-left-sidebar-width;
+    width: calc(100% - #{$hidden-left-sidebar-width});
+    transition: margin-left 0.5s, width 0.5s;
+}
+
+.footer-bar.left-sidebar-hidden {
+    margin-left: $hidden-left-sidebar-width;
+    width: calc(100% - #{$hidden-left-sidebar-width} - #{$right-sidebar-width});
+    transition: margin-left 0.5s, width 0.5s;
+}
+

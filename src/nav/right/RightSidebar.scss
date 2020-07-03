@@ -10,6 +10,7 @@
     overflow-y: hidden;
     width: $right-sidebar-width;
     transition: width 0.5s;
+    z-index: 10;
 }
 
 .right-sidebar.right-sidebar-hidden {

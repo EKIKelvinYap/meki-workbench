@@ -1,0 +1,30 @@
+@import '../App';
+
+.content {
+    z-index: 5;
+    background-color: $primary-background-color;
+    position: absolute;
+    width: calc(100% - #{$left-sidebar-width} - #{$right-sidebar-width});
+    margin-left: $left-sidebar-width;
+    height: calc(100% - #{$header-height} - #{$footer-height} - 0.1em);
+    transition: margin-left 0.5s, width 0.5s;
+    overflow-y: auto;
+}
+
+.content.right-sidebar-hidden {
+    margin-left: $left-sidebar-width;
+    width: calc(100% - #{$left-sidebar-width});
+    transition: margin-left 0.5s, width 0.5s;
+}
+
+.content.left-sidebar-hidden.right-sidebar-hidden {
+    margin-left: $hidden-left-sidebar-width;
+    width: calc(100% - #{$hidden-left-sidebar-width});
+    transition: margin-left 0.5s, width 0.5s;
+}
+
+.content.left-sidebar-hidden {
+    margin-left: $hidden-left-sidebar-width;
+    width: calc(100% - #{$hidden-left-sidebar-width} - #{$right-sidebar-width});
+    transition: margin-left 0.5s, width 0.5s;
+}

@@ -8,7 +8,7 @@ import LeftSidebarComp from './comps/LeftSidebarComp';
 
 import historyIcon from './history.png';
 import folderIcon from './folder.png';
-import infoIcon from './info.png';
+// import infoIcon from './info.png';
 
 class LeftSidebar extends React.Component {
 
@@ -36,18 +36,33 @@ class LeftSidebar extends React.Component {
                     <img src={mainLogo} alt="MEK-i" className="main-logo"/>
                 </div>
                 <div className="left-sidebar-container">
-                    <ul className="left-sidebar-list">
-                        <LeftSidebarComp icon={folderIcon} text="ASDASD" active>
-                            {/* <LeftSidebarList>
-                                <LeftSidebarItem />
-                            </LeftSidebarList> */}
+                    <LeftSidebarComp i="fa fa-folder" text="A">
+                        <LeftSidebarComp i="fa fa-user" text="A1" />
+                        {/* <LeftSidebarComp i="fa fa-phone" text="A2" />
+                        <LeftSidebarComp i="fa fa-tags" text="A3" /> */}
+                        <LeftSidebarComp icon={folderIcon} text="A4">
+                            <LeftSidebarComp icon={historyIcon} text="A41" />
                         </LeftSidebarComp>
-                        <LeftSidebarComp icon={historyIcon} text="ASDASD" secondaryActive />
-                        <LeftSidebarComp icon={folderIcon} text="ASDASD" />
-                        <LeftSidebarComp icon={infoIcon} text="ASDASD" />
-                        <LeftSidebarComp text="History" />
-                    </ul>
+                        <LeftSidebarComp icon={folderIcon} text="A4">
+                            <LeftSidebarComp icon={historyIcon} text="A41" />
+                            <LeftSidebarComp icon={folderIcon} text="A4">
+                            <LeftSidebarComp icon={historyIcon} text="A41" />
+                        </LeftSidebarComp>
+                        </LeftSidebarComp>
+                        {/* <LeftSidebarComp icon={historyIcon} text="A5" /> */}
+                    </LeftSidebarComp>
+                    {/* <LeftSidebarComp icon={historyIcon} text="B" />
+                    <LeftSidebarComp icon={historyIcon} text="C" />
+                    <LeftSidebarComp icon={infoIcon} text="D" />
+                    <LeftSidebarComp i="fa fa-car" text="E" /> */}
                 </div>
+                {/* <div className="left-sidebar-container">
+                    <LeftSidebarComp i="fa fa-folder" text="A">
+                        <LeftSidebarComp i="fa fa-folder" text="A">
+                        
+                        </LeftSidebarComp>
+                    </LeftSidebarComp>
+                </div> */}
             </aside>
         );
     }

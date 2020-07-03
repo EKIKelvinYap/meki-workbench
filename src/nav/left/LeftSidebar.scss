@@ -11,6 +11,7 @@
     overflow-y: hidden;
     width: $left-sidebar-width;
     transition: width 0.5s;
+    z-index: 10;
 }
 
 .left-sidebar.left-sidebar-hidden {
@@ -54,21 +55,31 @@
     overflow-y: auto;
     overflow-x: hidden;
     white-space: nowrap;
-    height: calc(100% - #{$header-height});
-    padding: 0 5px;
+    padding: 15px 5px;
 }
 
 .left-sidebar-list {
     list-style: none;
-    padding-left: 0;
+    padding-left: 1em;
+    margin: 0em;
+    transition: padding-left 0.5s;
 }
 
 .left-sidebar-list-item {
     border-radius: 8px;
     cursor: pointer;
-    padding: 0.5em;
-    margin: 0.1em 0;
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    
+    margin: 0.1em 0 0.1em;
     color: $secondary-light-color;
+    min-height: 1em;
+
+    display: flex;
+    transition: padding 0.5s;
+}
+
+.left-sidebar-list-item.first-list-item {
+    padding: 0.5em;
 }
 
 .left-sidebar-list-item:hover {
@@ -79,8 +90,51 @@
 .left-sidebar-list-item .image-item {
     width: 1em;
     height: 1em;
-    margin: 0 1em 0 0.9em;
+    margin: 0 1em 0 0em;
+    transition: margin 0.5s;
 }
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+.left-sidebar.left-sidebar-hidden .left-sidebar-list {
+    padding-left: 0em;
+    transition: padding-left 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden .left-sidebar-list-item {
+    padding: 0.5em;
+    transition: padding 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden .left-sidebar-list-item .image-item {
+    margin: 0 1em 0 1em;
+    transition: margin 0.5s;
+}
+
+
+
+.left-sidebar.left-sidebar-hidden:hover .left-sidebar-list-item.first-list-item {
+    padding: 0.5em;
+}
+
+.left-sidebar.left-sidebar-hidden:hover .left-sidebar-list {
+    padding-left: 1em;
+    transition: padding-left 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden:hover .left-sidebar-list-item {
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    transition: padding 0.5s;
+}
+
+.left-sidebar.left-sidebar-hidden:hover .left-sidebar-list-item .image-item {
+    margin: 0 1em 0 0em;
+    transition: margin 0.5s;
+}
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
 .left-sidebar .left-sidebar-list-item .left-sidebar-list-item-text {
     visibility: visible;
@@ -108,4 +162,27 @@
 .left-sidebar-list-item.secondary-active {
     background-color: $secondary-active-background-color;
     color: $secondary-active-color;
+}
+
+.left-sidebar-list-item.is-hidden {
+    display: none;
+}
+
+.left-sidebar .left-sidebar-list-item .left-sidebar-list-item-arrow {
+    margin-left: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.left-sidebar.left-sidebar-hidden .left-sidebar-list-item .left-sidebar-list-item-arrow {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.left-sidebar.left-sidebar-hidden:hover .left-sidebar-list-item .left-sidebar-list-item-arrow {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
 }

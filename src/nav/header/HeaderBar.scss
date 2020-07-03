@@ -12,6 +12,7 @@
     margin-right: $right-sidebar-width;
     // width: calc(100% - $left-sidebar-width - 20px);
     transition: margin-left 0.5s, margin-right 0.5s;
+    z-index: 10;
 }
 
 .header-bar.right-sidebar-hidden {
